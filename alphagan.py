@@ -1,7 +1,7 @@
 import os
 import time
 import tensorflow as tf
-import tensorflow_probability as tfp
+#import tensorflow_probability as tfp
 from tensorflow.keras.initializers import RandomNormal
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, BatchNormalization, \
@@ -18,11 +18,11 @@ import scipy as sp
 import sys
 import multiprocessing
 import argparse
-import stacked_mnist
+#import stacked_mnist
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-tfd = tfp.distributions
+#tfd = tfp.distributions
 
 
 
@@ -49,7 +49,7 @@ class AlphaGAN(object):
         self.num_images = opt.num_images
         self.gp_coef = opt.gp_coef
         if self.dataset != 'cifar10':
-            self.num_images = 10000
+            self.num_images = 10
         self.d_opt = Adam(2e-4, beta_1 = 0.5)
         self.g_opt = Adam(2e-4, beta_1 = 0.5)
         if self.dataset == 'cifar10':
